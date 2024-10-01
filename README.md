@@ -45,9 +45,10 @@ Por meio de uma plataforma com Listagem paginada das notas fiscais e um dashboar
 	
  	Edite o arquivo **appsettings.json** com a string de conexão correta:
 	
- 	**Docker**: Veja informações no arquivo docker-compose.yml
+ 	**Docker**: Veja informações no arquivo **docker-compose.yml**
 	
  	Exemplo de string de conexão:
+
 	```bash
 	"ConnectionStrings": {
    	   "DefaultConnection": "Server=db;Database=FintechDocker;User=sa;Password=#Docker12300#;TrustServerCertificate=True"
@@ -57,6 +58,7 @@ Por meio de uma plataforma com Listagem paginada das notas fiscais e um dashboar
 	**Sql Server Local**:
    
        Exemplo de string de conexão:
+   
    	```bash
 	"ConnectionStrings": {
 		   "DefaultConnection": "Server=localhost;Database=FinTech;Trusted_Connection=True;MultipleActiveResultSets=true;TrustServerCertificate=True"
@@ -73,6 +75,7 @@ Por meio de uma plataforma com Listagem paginada das notas fiscais e um dashboar
 	Selecione o projeto: **FinTech.Data**
 	
 	_Rode os seguintes comandos:_
+
 	```bash
 	dotnet ef migrations add InitialCreate -Context MeuDbContext
 	dotnet ef database update -Context MeuDbContext
@@ -91,17 +94,19 @@ Por meio de uma plataforma com Listagem paginada das notas fiscais e um dashboar
 	
  	**Docker Compose:**
     	 
-	Instale o Docker Desktop se ainda não tiver
+	Instale o **Docker Desktop** se ainda não tiver
  	
-    	Adicione como projeto de Inicialização: `Docker-Compose`
+    	Adicione como projeto de Inicialização: **Docker-Compose**
 	
-    	_Rode os comandos:_
+    	Rode os comandos:
+   
  	```bash
 	docker-compose up --build (cria os containers)
 	docker-compose up -d (roda os containers)
+  	```
 
 8. **Observações**
 
    Os códigos sql das tabelas do sistema (Migrations) estão dentro da pasta **sql**
 
-   No Arquivo: _Seeds/DataSeeder.cs_, tem uma lógica para adicionar dados falsos no banco de dados para testar os filtros
+   No Arquivo: **Seeds/DataSeeder.cs**, tem uma lógica para adicionar dados falsos no banco de dados para testar os filtros
