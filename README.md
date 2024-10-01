@@ -43,7 +43,7 @@ Por meio de uma plataforma com Listagem paginada das notas fiscais e um dashboar
 
 2. **Configurar o Banco de Dados**
 	
- 	Edite o arquivo _appsettings.json_ com a string de conexão correta:
+ 	Edite o arquivo **appsettings.json** com a string de conexão correta:
 	
  	**Docker**: Veja informações no arquivo docker-compose.yml
 	
@@ -52,7 +52,7 @@ Por meio de uma plataforma com Listagem paginada das notas fiscais e um dashboar
 	"ConnectionStrings": {
    	   "DefaultConnection": "Server=db;Database=FintechDocker;User=sa;Password=#Docker12300#;TrustServerCertificate=True"
     	}
-   	```bash
+   	```
 			
 	**Sql Server Local**:
    
@@ -61,7 +61,7 @@ Por meio de uma plataforma com Listagem paginada das notas fiscais e um dashboar
 	"ConnectionStrings": {
 		   "DefaultConnection": "Server=localhost;Database=FinTech;Trusted_Connection=True;MultipleActiveResultSets=true;TrustServerCertificate=True"
    	}
- 	```bash
+ 	```
 
 4. **Aplicar Migrations**
 	
@@ -70,29 +70,32 @@ Por meio de uma plataforma com Listagem paginada das notas fiscais e um dashboar
 	_dotnet tool install --global dotnet-ef_
 	
 
-	Selecione o projeto: _FinTech.Data_
+	Selecione o projeto: **FinTech.Data**
 	
 	_Rode os seguintes comandos:_
 	```bash
 	dotnet ef migrations add InitialCreate -Context MeuDbContext
 	dotnet ef database update -Context MeuDbContext
- 	```bash
+ 	```
 
 6. **Executar a Aplicação**
 	
  	**Projeto Local:**
-	Adicione como projeto de Inicialização: `FinTech.App`
+   
+	Adicione como projeto de Inicialização: **FinTech.App**
 
    	Rode o comando:
    
    	_dotnet run_
 		
-	**Docker Compose:** 	 
+	
+ 	**Docker Compose:**
+    	 
 	Instale o Docker Desktop se ainda não tiver
  	
     	Adicione como projeto de Inicialização: `Docker-Compose`
 	
-    	Rode os comandos:
+    	_Rode os comandos:_
  	```bash
 	docker-compose up --build (cria os containers)
 	docker-compose up -d (roda os containers)
