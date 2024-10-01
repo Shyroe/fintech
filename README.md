@@ -1,6 +1,10 @@
 # FinTech Application
+
+### Dashboard Demo
 ![Dashboard Indicadores](https://github.com/user-attachments/assets/f9a69da5-1dbf-46c2-9fc1-8e163fa2ede3)
-![Dashboard Gráficos](https://github.com/user-attachments/assets/96579e85-3208-4ac5-829c-5752860496d1)
+[Dashboard GrÃ¡ficos](https://github.com/user-attachments/assets/96579e85-3208-4ac5-829c-5752860496d1)
+
+### Notas Fiscais Demo
 ![Notas Fiscais Filtros](https://github.com/user-attachments/assets/023d68c9-c88f-40c4-9d4e-c93abf82b1ef)
 ![Notas Fiscais Tabela](https://github.com/user-attachments/assets/01eaf10c-5614-4560-a656-3950982fe02a)
 
@@ -10,9 +14,9 @@
 - **LinkedIn**: [LinkedIn](https://www.linkedin.com/in/leonardo-camargo/)
 - **Github**: [github.com/Shyroe](https://github.com/Shyroe)
 
-## Descrição do Projeto
-Projeto desenvolvido em ASP.NET Core MVC com integração ao SQL Server para realizar gerenciamento das notas fiscais e saber os principais indicadores.
-Por meio de uma plataforma com Listagem paginada das notas fiscais e um dashboard para visualização de indicadores e Gráfico de evolução da inadimplência ou da receita recebida mês a mês.
+## DescriÃ§Ã£o do Projeto
+Projeto desenvolvido em ASP.NET Core MVC com integraÃ§Ã£o ao SQL Server para realizar gerenciamento das notas fiscais e saber os principais indicadores.
+Por meio de uma plataforma com Listagem paginada das notas fiscais e um dashboard para visualizaÃ§Ã£o de indicadores e GrÃ¡fico de evoluÃ§Ã£o da inadimplÃªncia ou da receita recebida mÃªs a mÃªs.
 
 ## Tecnologias Utilizadas
 - **ASP.NET Core** 8.0
@@ -25,27 +29,27 @@ Por meio de uma plataforma com Listagem paginada das notas fiscais e um dashboar
 
 ## Setup do Projeto
 
-### Pré-requisitos
+### PrÃ©-requisitos
 - [.NET SDK](https://dotnet.microsoft.com/download/dotnet) 8.0
 - [Docker](https://www.docker.com/)
 - SQL Server ou Docker com SQL Server
 
-### Passos de Instalação
+### Passos de InstalaÃ§Ã£o
 
-1. **Clonar o Repositório**
+1. **Clonar o RepositÃ³rio**
    ```bash
    git clone https://github.com/Shyroe/fintech.git
 
 2. **Configurar o Banco de Dados**
-	Edite o arquivo appsettings.json com a string de conexão correta:
-	**Docker**: Veja informações no arquivo docker-compose.yml
-	Exemplo de string de conexão:
+	Edite o arquivo appsettings.json com a string de conexÃ£o correta:
+	**Docker**: Veja informaÃ§Ãµes no arquivo docker-compose.yml
+	Exemplo de string de conexÃ£o:
 	"ConnectionStrings": {
    	   "DefaultConnection": "Server=db;Database=FintechDocker;User=sa;Password=#Docker12300#;TrustServerCertificate=True"
     }
 			
 	**Sql Server Local**:
-    Exemplo de string de conexão:
+    Exemplo de string de conexÃ£o:
 	"ConnectionStrings": {
    		   "DefaultConnection": "Server=localhost;Database=FinTech;Trusted_Connection=True;MultipleActiveResultSets=true;TrustServerCertificate=True"
     }
@@ -58,20 +62,25 @@ Por meio de uma plataforma com Listagem paginada das notas fiscais e um dashboar
 	dotnet ef migrations add InitialCreate -Context MeuDbContext
 	dotnet ef database update -Context MeuDbContext
 
-4. **Executar a Aplicação**
-	Projeto Local:
-	Adicione como projeto de Inicialização: FinTech.App
-    Rode o comando: dotnet run
-		
-	Docker Compose: 
-	Instale o Docker Desktop se ainda não tiver
-    Adicione como projeto de Inicialização: Docker-Compose
+4. **Executar a AplicaÃ§Ã£o**
 	
-    Rode os comandos:
+ 	Projeto Local:
+	Adicione como projeto de InicializaÃ§Ã£o: `FinTech.App`
+    	Rode o comando:
+	```bash
+   	dotnet run
+		
+	Docker Compose: 	 
+	Instale o Docker Desktop se ainda nÃ£o tiver
+ 	
+    	Adicione como projeto de InicializaÃ§Ã£o: `Docker-Compose`
+	
+    	Rode os comandos:
+ 	```bash
 	docker-compose up --build (cria os containers)
 	docker-compose up -d (roda os containers)
 
-5. **Observações**
-   Os códigos sql das tabelas do sistema (Migrations) estão dentro da pasta **sql**
+6. **ObservaÃ§Ãµes**
+   Os cÃ³digos sql das tabelas do sistema (Migrations) estÃ£o dentro da pasta **sql**
 
-   No Arquivo: Seeds/DataSeeder.cs, tem uma lógica para adicionar dados falsos no banco de dados para testar os filtros
+   No Arquivo: Seeds/DataSeeder.cs, tem uma lÃ³gica para adicionar dados falsos no banco de dados para testar os filtros
