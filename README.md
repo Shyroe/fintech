@@ -2,7 +2,8 @@
 
 ### Dashboard Demo
 ![Dashboard Indicadores](https://github.com/user-attachments/assets/f9a69da5-1dbf-46c2-9fc1-8e163fa2ede3)
-[Dashboard Gráficos](https://github.com/user-attachments/assets/96579e85-3208-4ac5-829c-5752860496d1)
+
+![Dashboard Gráficos](https://github.com/user-attachments/assets/96579e85-3208-4ac5-829c-5752860496d1)
 
 ### Notas Fiscais Demo
 ![Notas Fiscais Filtros](https://github.com/user-attachments/assets/023d68c9-c88f-40c4-9d4e-c93abf82b1ef)
@@ -41,36 +42,52 @@ Por meio de uma plataforma com Listagem paginada das notas fiscais e um dashboar
    git clone https://github.com/Shyroe/fintech.git
 
 2. **Configurar o Banco de Dados**
-	Edite o arquivo appsettings.json com a string de conexão correta:
-	**Docker**: Veja informações no arquivo docker-compose.yml
-	Exemplo de string de conexão:
+	
+ 	Edite o arquivo _appsettings.json_ com a string de conexão correta:
+	
+ 	**Docker**: Veja informações no arquivo docker-compose.yml
+	
+ 	Exemplo de string de conexão:
+	```bash
 	"ConnectionStrings": {
    	   "DefaultConnection": "Server=db;Database=FintechDocker;User=sa;Password=#Docker12300#;TrustServerCertificate=True"
-    }
+    	}
+   	```bash
 			
 	**Sql Server Local**:
-    Exemplo de string de conexão:
+   
+       Exemplo de string de conexão:
+   	```bash
 	"ConnectionStrings": {
-   		   "DefaultConnection": "Server=localhost;Database=FinTech;Trusted_Connection=True;MultipleActiveResultSets=true;TrustServerCertificate=True"
-    }
+		   "DefaultConnection": "Server=localhost;Database=FinTech;Trusted_Connection=True;MultipleActiveResultSets=true;TrustServerCertificate=True"
+   	}
+ 	```bash
 
-3. **Aplicar Migrations**
-	Instalar ferramenta: dotnet tool install --global dotnet-ef
-	Selecione o projeto: FinTech.Data
+4. **Aplicar Migrations**
 	
-	Rode os seguintes comandos:
+   	Instalar ferramenta:
+   
+	_dotnet tool install --global dotnet-ef_
+	
+
+	Selecione o projeto: _FinTech.Data_
+	
+	_Rode os seguintes comandos:_
+	```bash
 	dotnet ef migrations add InitialCreate -Context MeuDbContext
 	dotnet ef database update -Context MeuDbContext
+ 	```bash
 
-4. **Executar a Aplicação**
+6. **Executar a Aplicação**
 	
- 	Projeto Local:
+ 	**Projeto Local:**
 	Adicione como projeto de Inicialização: `FinTech.App`
-    	Rode o comando:
-	```bash
-   	dotnet run
+
+   	Rode o comando:
+   
+   	_dotnet run_
 		
-	Docker Compose: 	 
+	**Docker Compose:** 	 
 	Instale o Docker Desktop se ainda não tiver
  	
     	Adicione como projeto de Inicialização: `Docker-Compose`
@@ -80,7 +97,8 @@ Por meio de uma plataforma com Listagem paginada das notas fiscais e um dashboar
 	docker-compose up --build (cria os containers)
 	docker-compose up -d (roda os containers)
 
-6. **Observações**
+8. **Observações**
+
    Os códigos sql das tabelas do sistema (Migrations) estão dentro da pasta **sql**
 
-   No Arquivo: Seeds/DataSeeder.cs, tem uma lógica para adicionar dados falsos no banco de dados para testar os filtros
+   No Arquivo: _Seeds/DataSeeder.cs_, tem uma lógica para adicionar dados falsos no banco de dados para testar os filtros
