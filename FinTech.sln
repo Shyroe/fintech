@@ -1,0 +1,54 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.35027.167
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FinTech.App", "src\FinTech.App\FinTech.App.csproj", "{9004996B-4805-4CDB-89D3-21F04C293FE0}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FinTech.Business", "src\FinTech.Business\FinTech.Business.csproj", "{B6979B01-234C-49EC-8E11-54737C7E5DC3}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FinTech.Data", "src\FinTech.Data\FinTech.Data.csproj", "{2E22E100-249D-484D-89FB-D7F148179CE3}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{9B037D28-C241-45A0-8EFF-FCE5DE8D1804}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "sql-scripts", "sql-scripts", "{1B3EA8FD-3D7B-4336-AC32-4DA9EAD785FF}"
+	ProjectSection(SolutionItems) = preProject
+		create_database.sql = create_database.sql
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Itens de Solução", "Itens de Solução", "{CBAEB08D-4EBC-43E2-A2CB-CEE1E5683C18}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+		README.md = README.md
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9004996B-4805-4CDB-89D3-21F04C293FE0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9004996B-4805-4CDB-89D3-21F04C293FE0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9004996B-4805-4CDB-89D3-21F04C293FE0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9004996B-4805-4CDB-89D3-21F04C293FE0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B6979B01-234C-49EC-8E11-54737C7E5DC3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B6979B01-234C-49EC-8E11-54737C7E5DC3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B6979B01-234C-49EC-8E11-54737C7E5DC3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B6979B01-234C-49EC-8E11-54737C7E5DC3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2E22E100-249D-484D-89FB-D7F148179CE3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2E22E100-249D-484D-89FB-D7F148179CE3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2E22E100-249D-484D-89FB-D7F148179CE3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2E22E100-249D-484D-89FB-D7F148179CE3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9B037D28-C241-45A0-8EFF-FCE5DE8D1804}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9B037D28-C241-45A0-8EFF-FCE5DE8D1804}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9B037D28-C241-45A0-8EFF-FCE5DE8D1804}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9B037D28-C241-45A0-8EFF-FCE5DE8D1804}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {78E97A16-6D8B-4321-A8BE-2F3DA6087B07}
+	EndGlobalSection
+EndGlobal
