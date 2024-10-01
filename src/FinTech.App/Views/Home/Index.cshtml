@@ -1,0 +1,131 @@
+﻿@using FinTech.App.ViewModels
+@model DashboardViewModel
+
+
+@{
+    ViewData["Title"] = "Dashboard";
+}
+
+<div class="page-content-wrapper">
+    <div class="page-content">
+        <div class="page-bar">
+            <div class="page-title-breadcrumb">
+                <div class=" pull-left">
+                    <div class="page-title">@ViewData["Title"]</div>
+                </div>
+                <ol class="breadcrumb page-breadcrumb pull-right">
+                    <li>
+                        <i class="fas fa-home"></i>&nbsp;<a class="parent-item" asp-action="Index" asp-controller="Home">Home</a>
+                    </li>
+                </ol>
+            </div>
+        </div>
+        <div class="col-sm-12">
+            <div class="card-box">
+                <div class="card-head">
+                    <header>Indicadores:</header>
+                </div>
+                <div class="card-body">
+
+                    <div class="row">
+                        <div class="col-lg-3 col-md-3 col-sm-6 col-12">
+                            <div class="form-group">
+                                <label class="form-label fw-bold">Ano</label>
+                                <select id="filtro_ano_dashboard" class="form-select">
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-sm-6 col-12">
+                            <div class="form-group">
+                                <label class="form-label fw-bold">Trimestre</label>
+                                <select id="filtro_trimestre_dashboard" class="form-select">
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-sm-6 col-12">
+                            <div class="form-group">
+                                <label class="form-label fw-bold">Mês</label>
+                                <select id="filtro_mes_dashboard" class="form-select">
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <hr />
+                    <div class="row">
+                        <div class="col-xxl-4 col-xl-4 col-md-6 col-12">
+                            <div class="info-box bg-b-blue text-white">
+                                <span class="info-box-icon mt-1"><i class="material-icons">description</i></span>
+                                <div class="info-box-content">
+                                    <span class="info-box-text fw-bold">Notas Emitidas</span>
+                                    <span id="totalEmitidas" class="info-box-number">@Model.TotalEmitidas.ToString("C2")</span>
+                                </div>                               
+                            </div>
+                        </div>
+                        <div class="col-xxl-4 col-xl-4 col-md-6 col-12">
+                            <div class="info-box bg-red text-white">
+                                <span class="info-box-icon mt-1"><i class="material-icons">error</i></span>
+                                <div class="info-box-content">
+                                    <span class="info-box-text fw-bold">Notas Inadimplentes</span>
+                                    <span id="totalInadimplencias" class="info-box-number">@Model.TotalInadimplencia.ToString("C2")</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xxl-4 col-xl-4 col-md-6 col-12">
+                            <div class="info-box bg-gray-dark text-white">
+                                <span class="info-box-icon mt-1"><i class="material-icons">money_off</i></span>
+                                <div class="info-box-content">
+                                    <span class="info-box-text fw-bold">Notas sem Cobrança</span>
+                                    <span id="totalSemCobrancas" class="info-box-number">@Model.TotalSemCobranca.ToString("C2")</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xxl-4 col-xl-4 col-md-6 col-12">
+                            <div class="info-box bg-orange text-white">
+                                <span class="info-box-icon mt-1"><i class="material-icons">schedule</i></span>
+                                <div class="info-box-content">
+                                    <span class="info-box-text fw-bold">Notas a Vencer</span>
+                                    <span id="totalAVencer" class="info-box-number">@Model.TotalAVencer.ToString("C2")</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xxl-4 col-xl-4 col-md-6 col-12">
+                            <div class="info-box bg-b-green text-white">
+                                <span class="info-box-icon mt-1"><i class="material-icons">check_circle</i></span>
+                                <div class="info-box-content">
+                                    <span class="info-box-text fw-bold">Notas Pagas</span>
+                                    <span id="totalPagas" class="info-box-number">@Model.TotalPagas.ToString("C2")</span>
+                                </div>
+                            </div>
+                        </div>                                          
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-box">
+                <div class="card-head">
+                    <header>@ViewData["Title"]</header>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-lg-3 col-md-3 col-sm-6 col-12">
+                            <div class="form-group">
+                                <label class="form-label fw-bold">Ano</label>
+                                <select id="filtro_ano_graficos" class="form-select">
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row gx-2 gy-5">
+                        <div class="col-lg-6 col-md-12 col-12">
+                            <canvas id="receitaChart"></canvas>
+                        </div>
+                        <div class="col-lg-6 col-md-12 col-12">
+                            <canvas id="inadimplenciaChart"></canvas>
+                        </div>
+                        @* <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> *@
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
