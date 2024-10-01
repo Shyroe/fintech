@@ -7,6 +7,7 @@
 
 ### Notas Fiscais Demo
 ![Notas Fiscais Filtros](https://github.com/user-attachments/assets/023d68c9-c88f-40c4-9d4e-c93abf82b1ef)
+
 ![Notas Fiscais Tabela](https://github.com/user-attachments/assets/01eaf10c-5614-4560-a656-3950982fe02a)
 
 ## Desenvolvedor
@@ -57,7 +58,7 @@ Por meio de uma plataforma com Listagem paginada das notas fiscais e um dashboar
 			
 	**Sql Server Local**:
    
-       Exemplo de string de conexão:
+    Exemplo de string de conexão:
    
    	```bash
 	"ConnectionStrings": {
@@ -96,9 +97,9 @@ Por meio de uma plataforma com Listagem paginada das notas fiscais e um dashboar
     	 
 	Instale o **Docker Desktop** se ainda não tiver
  	
-    	Adicione como projeto de Inicialização: **Docker-Compose**
+    Adicione como projeto de Inicialização: **Docker-Compose**
 	
-    	Rode os comandos:
+    Rode os comandos:
    
  	```bash
 	docker-compose up --build (cria os containers)
