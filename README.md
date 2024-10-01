@@ -1,4 +1,8 @@
 # FinTech Application
+![Dashboard Indicadores](https://github.com/user-attachments/assets/f9a69da5-1dbf-46c2-9fc1-8e163fa2ede3)
+![Dashboard Gráficos](https://github.com/user-attachments/assets/96579e85-3208-4ac5-829c-5752860496d1)
+![Notas Fiscais Filtros](https://github.com/user-attachments/assets/023d68c9-c88f-40c4-9d4e-c93abf82b1ef)
+![Notas Fiscais Tabela](https://github.com/user-attachments/assets/01eaf10c-5614-4560-a656-3950982fe02a)
 
 ## Desenvolvedor
 - **Nome**: Leonardo Camargo
@@ -15,7 +19,7 @@ Por meio de uma plataforma com Listagem paginada das notas fiscais e um dashboar
 - **Entity Framework Core** 8.0
 - **Bootstrap** 5.0
 - **ChartJS** 4.4
-- **SQL Server**
+- **SQL Server** 2022
 - **Docker**
 - **C#**
 
