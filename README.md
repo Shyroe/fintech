@@ -99,7 +99,10 @@ Por meio de uma plataforma com Listagem paginada das notas fiscais e um dashboar
  	
     Adicione como projeto de Inicialização: **Docker-Compose**
 	
-    Rode os comandos:
+	Se tiver Visual Studio IDE e Docker Desktop instalado é só apertar **F5** que já abre o projeto com os dados falsos de exemplo para testar.
+	
+		
+    Ou Rode os seguintes comandos:
    
  	```bash
 	docker-compose up --build (cria os containers)

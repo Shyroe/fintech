@@ -64,8 +64,8 @@ namespace FinTech.App
 
             app.UseRouting();
 
-            //app.UseAuthentication();
-            //app.UseAuthorization();
+            app.UseAuthentication();
+            app.UseAuthorization();
 
             app.UseGlobalizationConfig();
 

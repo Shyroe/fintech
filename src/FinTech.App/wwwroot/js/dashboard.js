@@ -1,8 +1,6 @@
 ﻿
 $(document).ready(function () {
 
-
-    console.log("Init Dashboard.js Page");    
     carregaSelectMesDashboard();
     carregaSelectTrimestreDashboard();
     carregaSelectAnoDashboard();
@@ -16,7 +14,6 @@ function carregaCharts() {
         fetch('/Home/GetGraficos')
             .then(response => response.json())
             .then(data => {
-                console.log("DashBoard carregaCharts data: ", data);
                 var inadimplenciaPorMes = data.inadimplenciaPorMes.map(function (item) {
                     return item.valorInadimplente;
                 });
@@ -69,7 +66,6 @@ $('#filtro_ano_dashboard, #filtro_mes_dashboard, #filtro_trimestre_dashboard').o
         type: 'GET',
         data: { ano: ano, mes: mes, trimestre: trimestre },
         success: function (data) {
-            console.log("Filtros Indicadores - data: ", data);
             $('span#totalEmitidas').text(data.totalEmitidas.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' }));
             $('span#totalInadimplencias').text(data.totalNotasVencidas.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' }));
             $('span#totalSemCobrancas').text(data.totalNotasSemCobranca.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' }));
@@ -279,7 +275,6 @@ function carregaSelectAnoGraficos() {
             data: data
         });
 
-        //carregarGraficos inicial
         const anoInicial = data[1].id;
         carregarGraficos(anoInicial);
 

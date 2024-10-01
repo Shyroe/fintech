@@ -1,7 +1,6 @@
 ﻿
 $(document).ready(function () {
 
-    console.log("Init NotasFiscais.js Page");   
     carregaSelectStatus();
     carregaSelectMes();
     carregaTableNotasFiscais();    
@@ -108,7 +107,6 @@ function carregaSelectStatus() {
                 type: "GET",
                 dataType: 'json',
                 processResults: function (data) {
-                    console.log("Filtro StatusNotaFiscal Data: ", data);                    
                     return {
                         results: data
                     };
