@@ -82,16 +82,29 @@ Por meio de uma plataforma com Listagem paginada das notas fiscais e um dashboar
 	dotnet ef database update -Context MeuDbContext
  	```
 
-6. **Executar a Aplicação**
+6. **Restaurar bibliotecas Javascript**
+
+	Rode o seguinte comando:
+
+	 ```bash
+	 dotnet libman restore
+	 ```
+		
+	Esse comando baixa todas as bibliotecas especificadas no libman.json e adiciona na pasta: wwwroot/lib    
+
+7. **Executar a Aplicação**
+	
+	
 	
  	**Projeto Local:**
    
 	Adicione como projeto de Inicialização: **FinTech.App**
 
    	Rode o comando:
-   
-   	_dotnet run_
-		
+	
+	```bash
+   	dotnet run
+	```		
 	
  	**Docker Compose:**
     	 

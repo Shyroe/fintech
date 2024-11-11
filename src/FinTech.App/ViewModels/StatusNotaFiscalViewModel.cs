@@ -6,7 +6,7 @@ namespace FinTech.App.ViewModels
 {
     public class StatusNotaFiscalViewModel
     {
-        //[Key]
+        [Key]
         public Guid Id { get; set; }
 
         [DisplayName("Descrição")]

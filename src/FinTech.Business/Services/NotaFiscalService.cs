@@ -1,5 +1,6 @@
 ﻿using FinTech.Business.Intefaces;
 using FinTech.Business.Models;
+using FinTech.Business.Models.Validations;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -48,6 +49,25 @@ namespace FinTech.Business.Services
             }
 
             return notasFiscais;
+        }
+
+        public async Task Adicionar(NotaFiscal request)
+        {
+            if (!ExecutarValidacao(new NotaFiscalValidation(), request)) return;
+
+            await _repository.Adicionar(request);
+        }
+
+        public async Task Atualizar(NotaFiscal request)
+        {
+            if (!ExecutarValidacao(new NotaFiscalValidation(), request)) return;
+
+            await _repository.Atualizar(request);
+        }
+
+        public async Task Remover(Guid id)
+        {
+            await _repository.Remover(id);
         }
 
 

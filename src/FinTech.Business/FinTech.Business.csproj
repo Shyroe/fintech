@@ -5,7 +5,4 @@
   <ItemGroup>
     <PackageReference Include="FluentValidation" Version="10.3.3" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Models\Validations\" />
-  </ItemGroup>
 </Project>

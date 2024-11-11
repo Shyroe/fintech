@@ -21,7 +21,7 @@ $(document).ready(function () {
             pageLength: 10,
             pageChange: false,
             language: {
-                url: "/lib/json/datatable-pt-br.json"
+                url: "/template-smart/json/datatable-pt-br.json"
             },
             lengthMenu: [[5, 10, 25], [5, 10, 25]],
             ajax: {
@@ -71,9 +71,9 @@ $(document).ready(function () {
                 {
                     'data': null, orderable: false,
                     render: function (d, t, f, m) {
-                        var r = '<a id="visualizar-notaFiscal" class="btn btn-primary btn-xs pe-none" href="/NotaFiscal/Detalhe/' + f.id + '" ><i class="fas fa-search"></i></a >';
-                        r += '<a id="editar-notaFiscal" class="btn btn-success btn-xs pe-none" href="/NotaFiscal/Editar/' + f.id + '" target="_blank" ><i class="fas fa-pen"></i></a >';
-                        r += '<a id="btn-delete-notaFiscal" class="btn btn-danger btn-xs pe-none" onclick="deleteNotaFiscal(\'' + f.id + '\');"><i class="fas fa-trash"></i></a>';
+                        var r = '<a id="visualizar-notaFiscal" class="btn btn-primary btn-xs" href="/NotasFiscais/Details/' + f.id + '" ><i class="fas fa-search"></i></a >';
+                        r += '<a id="editar-notaFiscal" class="btn btn-success btn-xs" href="/NotasFiscais/Edit/' + f.id + '" target="_blank" ><i class="fas fa-pen"></i></a >';
+                        r += '<a id="btn-delete-notaFiscal" class="btn btn-danger btn-xs" href="/NotasFiscais/Delete/' + f.id + '"><i class="fas fa-trash"></i></a>';
 
                         return r;
                     }

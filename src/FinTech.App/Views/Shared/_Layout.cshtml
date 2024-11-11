@@ -10,49 +10,29 @@
     <meta name="author" content="Financial Business" />
     <title>FinTech</title>
 
+    <!-- Site Libs -->
+    <link rel="stylesheet" href="~/css/libs.min.css">
     <!-- google font -->
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet" type="text/css" />
     <!-- icons -->
-    <link href="~/lib/template-smart/fonts/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/template-smart/fonts/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" type="text/css" />
     <link href="~/lib/font-awesome/css/all.min.css" rel="stylesheet" />
-    <link href="~/lib/template-smart/fonts/material-design-icons/material-icon.css" rel="stylesheet" type="text/css" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <!--bootstrap -->
-    <environment include="Development">
-        <link rel="stylesheet" href="~/lib/template-smart/plugins/bootstrap/css/bootstrap.min.css" />
-    </environment>
-    <environment exclude="Development">
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0/css/bootstrap.min.css"
-              asp-fallback-href="~/lib/template-smart/plugins/bootstrap/css/bootstrap.min.css"
-              asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute"
-              crossorigin="anonymous"
-              integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" />
-    </environment>
+    <link href="~/template-smart/fonts/material-design-icons/material-icon.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">   
 
-    <!-- Material Design Lite CSS -->
-    <link rel="stylesheet" href="~/lib/template-smart/plugins/material/material.min.css">
-    <link rel="stylesheet" href="~/lib/template-smart/css/material_style.css">
-    <!-- DataTable-->
-    <link rel="stylesheet" href="~/lib/template-smart/plugins/datatables/plugins/bootstrap/dataTables.bootstrap4.min.css" type="text/css" />
-    <link rel="stylesheet" href="~/lib/template-smart/plugins/datatables/jquery.dataTables.min.css" type="text/css" />
-    <link rel="stylesheet" href="~/lib/template-smart/plugins/datatables/datatables.min.css" type="text/css" />
-    @* <link rel="stylesheet" href="https://cdn.datatables.net/select/1.6.2/css/select.dataTables.min.css" type="text/css" /> *@
-    <link rel="stylesheet" href="~/lib/template-smart/plugins/datatables/plugins/select/select.dataTables.css" type="text/css" />
-    <!-- Select/MultiSelect -->
-    <link rel="stylesheet" href="~/lib/template-smart/plugins/select2/css/select2.css" type="text/css" />
-    <link rel="stylesheet" href="~/lib/template-smart/plugins/select2/css/select2-bootstrap.min.css" type="text/css" />
     <!-- inbox style -->
-    <link href="~/lib/template-smart/css/pages/inbox.min.css" rel="stylesheet" type="text/css" />
-    <link href="~/lib/template-smart/css/pages/formlayout.css" rel="stylesheet" type="text/css" />
+    <link href="~/template-smart/css/pages/inbox.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/template-smart/css/pages/formlayout.css" rel="stylesheet" type="text/css" />
     <!-- Theme Styles -->
-    <link href="~/lib/template-smart/css/theme/light/theme_style.css" rel="stylesheet" id="rt_style_components" type="text/css" />
-    <link href="~/lib/template-smart/css/plugins.min.css" rel="stylesheet" type="text/css" />
-    <link href="~/lib/template-smart/css/theme/light/style.css" rel="stylesheet" type="text/css" />
-    <link href="~/lib/template-smart/css/responsive.css" rel="stylesheet" type="text/css" />
-    <link href="~/lib/template-smart/css/theme/light/theme-color.css" rel="stylesheet" type="text/css" />
+    <link href="~/template-smart/css/theme/light/theme_style.css" rel="stylesheet" id="rt_style_components" type="text/css" />
+    <link href="~/template-smart/css/plugins.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/template-smart/css/theme/light/style.css" rel="stylesheet" type="text/css" />
+    <link href="~/template-smart/css/responsive.css" rel="stylesheet" type="text/css" />
+    <link href="~/template-smart/css/theme/light/theme-color.css" rel="stylesheet" type="text/css" />
 
     <!-- favicon -->
     <link rel="shortcut icon" href="~/favicon.ico" />
+    
     <link rel="stylesheet" href="~/css/site.css" type="text/css" />
 
 </head>
@@ -84,13 +64,13 @@
                             <a class="dropdown-toggle" data-bs-toggle="dropdown" data-hover="dropdown"
                                data-close-others="true">
 
-                                <img src="~/lib/template-smart/img/user.png" alt="Username" class="img-circle" />
+                                <img src="~/template-smart/img/user.png" alt="Username" class="img-circle" />
 
                                 <span class="username username-hide-on-mobile"> User </span>
 
                                 <i class="fas fa-angle-down"></i>
                             </a>
-                            <ul class="dropdown-menu dropdown-menu-default">                             
+                            <ul class="dropdown-menu dropdown-menu-default">
                                 <li class="divider"> </li>
                                 <li>
                                     <a asp-action="Sair" asp-controller="Login">
@@ -112,12 +92,12 @@
                     <div id="remove-scroll" class="left-sidemenu">
                         <ul class="sidemenu  page-header-fixed slimscroll-style" data-keep-expanded="false"
                             data-auto-scroll="true" data-slide-speed="200"
-                            style="padding-top: 20px">
+                            style="padding-top: 50px">
                             <li class="sidebar-toggler-wrapper hide">
                                 <div class="sidebar-toggler">
                                     <span></span>
                                 </div>
-                            </li>                           
+                            </li>
                             <li class="nav-item">
                                 <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">
                                     <i class="fas fa-home"></i>
@@ -127,7 +107,7 @@
 
                             <li class="nav-item">
                                 <a class="nav-link" asp-area="" asp-controller="NotasFiscais" asp-action="Index">
-                                <i class="fas fa-file-alt"></i>
+                                    <i class="fas fa-file-alt"></i>
                                     <span class="title">Notas Fiscais</span>
                                 </a>
                             </li>
@@ -151,52 +131,17 @@
             </div>
             <!-- end footer -->
         </div>
-        
-        <environment include="Development">
-            <script src="~/lib/jquery/dist/jquery.js"></script>
-            <script src="~/lib/template-smart/plugins/bootstrap/js/bootstrap.min.js"></script>
-        </environment>
-        <environment exclude="Development">
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"
-                    asp-fallback-src="~/lib/jquery/dist/jquery.min.js"
-                    asp-fallback-test="window.jQuery"
-                    crossorigin="anonymous"
-                    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=">
-            </script>
-            <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0/js/bootstrap.bundle.min.js"
-                    asp-fallback-src="~/lib/template-smart/plugins/bootstrap/js/bootstrap.min.js"
-                    asp-fallback-test="window.jQuery && window.jQuery.fn && window.jQuery.fn.modal"
-                    crossorigin="anonymous"
-                    integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o">
-            </script>
-        </environment>
 
-        <!-- bootstrap -->
-        <script src="~/lib/template-smart/plugins/bootstrap-switch/js/bootstrap-switch.min.js"></script>
-        <script src="~/lib/template-smart/plugins/sparkline/jquery.sparkline.js"></script>
-        <script src="~/lib/template-smart/js/pages/sparkline/sparkline-data.js"></script>
+
+        <script src="~/js/libs.min.js"></script>
+
         <!-- Common js-->
-        <script src="~/lib/template-smart/js/app.js"></script>
-        <script src="~/lib/template-smart/js/layout.js"></script>
-        <script src="~/lib/template-smart/js/theme-color.js"></script>
-        <!-- data tables -->
-        <script src="~/lib/template-smart/plugins/datatables/jquery.dataTables.min.js"></script>
-        <script src="~/lib/template-smart/plugins/datatables/plugins/bootstrap/dataTables.bootstrap4.min.js"></script>
-        @*<script src="https://cdn.datatables.net/select/1.6.2/js/dataTables.select.min.js"></script>*@
-        <script src="~/lib/template-smart/plugins/datatables/plugins/select/dataTables.select.min.js"></script>
+        <script src="~/template-smart/js/app.js"></script>
+        <script src="~/template-smart/js/layout.js"></script>
+        <script src="~/template-smart/js/theme-color.js"></script>
 
-        <script src="~/lib/template-smart/js/pages/table/table_data.js"></script>
-        <!-- Select/MultiSelect -->
-        <script src="~/lib/template-smart/plugins/select2/js/select2.js"></script>
-
-        @*ChartJS*@
-        <script src="https://cdn.jsdelivr.net/npm/chart.js"
-                asp-fallback-src="~/lib/template-smart/plugins/chart-js/chart.umd.js"
-                asp-fallback-test="window.Chart"
-                crossorigin="anonymous">
-        </script>
         <!-- end js include path -->
-       
+
         <script src="~/js/site.js" asp-append-version="true"></script>
         <script src="~/js/notas_fiscais.js" asp-append-version="true"></script>
         <script src="~/js/dashboard.js" asp-append-version="true"></script>
@@ -206,4 +151,3 @@
     </div>
 </body>
 </html>
-

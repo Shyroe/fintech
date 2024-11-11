@@ -1,0 +1,101 @@
+﻿@model FinTech.App.ViewModels.NotaFiscalViewModel
+
+@{
+    ViewData["Title"] = "Notas Fiscais";
+    ViewData["Subtitle"] = "Nova Nota Fiscal";
+}
+
+<div class="page-content-wrapper">
+    <div class="page-content">
+        <div class="page-bar">
+            <div class="page-title-breadcrumb">
+                <div class=" pull-left">
+                    <div class="page-title">@ViewData["Title"]</div>
+                </div>
+                <ol class="breadcrumb page-breadcrumb pull-right">
+                    <li>
+                        <i class="fas fa-settings"></i>&nbsp;<a class="parent-item" asp-action="Index" asp-controller="Home">Início</a>&nbsp;<i class="fas fa-angle-right"></i>
+                    </li>
+                    <li class="active">@ViewData["Title"]</li>
+                </ol>
+            </div>
+        </div>
+        <div class="col-sm-12">
+            <div class="card-box">
+                <div class="card-head d-flex align-items-center">
+                    <header class="me-auto">@ViewData["Subtitle"]</header>
+                </div>
+
+                <div class="card-body pt-5">
+                    <form enctype="multipart/form-data" asp-action="Create">
+
+                        <vc:Summary></vc:Summary>
+
+                        <div class="row">
+                            <div class="form-group col-xxl-3 col-md-4 col-sm-6 col-12">
+                                <label asp-for="StatusId"></label>
+                                <select asp-for="StatusId" class="form-select" asp-items="ViewBag.StatusList"></select>
+                                <span asp-validation-for="StatusId" class="text-danger"></span>
+                            </div>
+                            <div class="form-group col-xxl-3 col-md-4 col-sm-6 col-12">
+                                <label asp-for="NomePagador" class="control-label"></label>
+                                <input asp-for="NomePagador" class="form-control" />
+                                <span asp-validation-for="NomePagador" class="text-danger"></span>
+                            </div>
+                            <div class="form-group col-xxl-3 col-md-4 col-sm-6 col-12">
+                                <label asp-for="NumeroIdentificacao" class="control-label"></label>
+                                <input asp-for="NumeroIdentificacao" class="form-control" />
+                                <span asp-validation-for="NumeroIdentificacao" class="text-danger"></span>
+                            </div>
+                            <div class="form-group col-xxl-3 col-md-4 col-sm-6 col-12">
+                                <label asp-for="DataEmissao"></label>
+                                <input asp-for="DataEmissao" class="form-control" type="date" />
+                                <span asp-validation-for="DataEmissao" class="text-danger"></span>
+                            </div>
+
+                            <div class="form-group col-xxl-3 col-md-4 col-sm-6 col-12">
+                                <label asp-for="DataCobranca"></label>
+                                <input asp-for="DataCobranca" class="form-control" type="date" />
+                                <span asp-validation-for="DataCobranca" class="text-danger"></span>
+                            </div>
+
+                            <div class="form-group col-xxl-3 col-md-4 col-sm-6 col-12">
+                                <label asp-for="DataPagamento"></label>
+                                <input asp-for="DataPagamento" class="form-control" type="date" />
+                                <span asp-validation-for="DataPagamento" class="text-danger"></span>
+                            </div>
+
+                            <div class="form-group col-xxl-3 col-md-2 col-sm-6 col-12">
+                                <label asp-for="Valor"></label>
+                                <input asp-for="Valor" class="form-control" type="number" step="0.01" />
+                                <span asp-validation-for="Valor" class="text-danger"></span>
+                            </div>
+
+                            <div class="form-group col-xxl-3 col-md-5 col-sm-6 col-12">
+                                <label asp-for="DocumentoNotaFiscal"></label>
+                                <input asp-for="DocumentoNotaFiscal" class="form-control" />
+                                <span asp-validation-for="DocumentoNotaFiscal" class="text-danger"></span>
+                            </div>
+
+                            <div class="form-group col-xxl-3 col-md-5 col-sm-6 col-12">
+                                <label asp-for="DocumentoBoletoBancario"></label>
+                                <input asp-for="DocumentoBoletoBancario" class="form-control" />
+                                <span asp-validation-for="DocumentoBoletoBancario" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                        <div class="form-group mt-4">
+                            <input type="submit" value="Cadastrar" class="btn btn-primary" />
+                            <a class="btn btn-info" asp-action="Index">Voltar</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
+

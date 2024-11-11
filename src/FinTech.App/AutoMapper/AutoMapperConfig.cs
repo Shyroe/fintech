@@ -9,6 +9,10 @@ namespace FinTech.App.AutoMapper
         public AutoMapperConfig()
         {
             CreateMap<StatusNotaFiscal, StatusNotaFiscalViewModel>().ReverseMap();
+            CreateMap<NotaFiscalViewModel, NotaFiscal>()
+                .ForMember(dest => dest.CreatedAt, opt => opt.Ignore())
+                .ForMember(dest => dest.UpdatedAt, opt => opt.Ignore())
+                .ReverseMap();
         }
     }
 }

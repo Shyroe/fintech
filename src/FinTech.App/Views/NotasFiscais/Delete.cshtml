@@ -1,0 +1,175 @@
+﻿@model FinTech.App.ViewModels.NotaFiscalViewModel
+
+@{
+    ViewData["Title"] = "Notas Fiscais";
+    ViewData["Subtitle"] = "Excluir Nota Fiscal";
+}
+
+<div class="page-content-wrapper">
+    <div class="page-content">
+        <div class="page-bar">
+            <div class="page-title-breadcrumb">
+                <div class=" pull-left">
+                    <div class="page-title">@ViewData["Subtitle"]</div>
+                </div>
+                <ol class="breadcrumb page-breadcrumb pull-right">
+                    <li>
+                        <i class="fas fa-settings"></i>&nbsp;<a class="parent-item" asp-action="Index" asp-controller="Home">Início</a>&nbsp;<i class="fas fa-angle-right"></i>
+                    </li>
+                    <li class="active">@ViewData["Title"]</li>
+                </ol>
+            </div>
+        </div>
+        <div class="col-sm-12">
+            <div class="card-box">
+                <div class="card-head d-flex align-items-center">
+                    <header class="me-auto">Você tem certeza disso?</header>
+                </div>
+
+                <div class="card-body pt-5">
+                    @* <h4>@ViewData["Subtitle"] </h4> *@
+
+                    @* <h5>Você tem certeza disso?</h5> *@
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <dl>
+                                <dt>
+                                    @Html.DisplayNameFor(model => model.StatusId)
+                                </dt>
+                                <dd>
+                                    @Html.DisplayFor(model => model.StatusId)
+                                </dd>
+                                <dt>
+                                    @Html.DisplayNameFor(model => model.NomePagador)
+                                </dt>
+                                <dd>
+                                    @Html.DisplayFor(model => model.NomePagador)
+                                </dd>
+                                <dt>
+                                    @Html.DisplayNameFor(model => model.NumeroIdentificacao)
+                                </dt>
+                                <dd>
+                                    @Html.DisplayFor(model => model.NumeroIdentificacao)
+                                </dd>
+                                <dt>
+                                    @Html.DisplayNameFor(model => model.DocumentoNotaFiscal)
+                                </dt>
+                                <dd>
+                                    @(!string.IsNullOrEmpty(Model.DocumentoNotaFiscal) ? Html.DisplayFor(model => model.DocumentoNotaFiscal) : "-")
+                                </dd>
+                                <dt>
+                                    @Html.DisplayNameFor(model => model.DocumentoBoletoBancario)
+                                </dt>
+                                <dd>
+                                    @(!string.IsNullOrEmpty(Model.DocumentoBoletoBancario) ? Html.DisplayFor(model => model.DocumentoBoletoBancario) : "-")                                    
+                                </dd>
+                                <dt>
+                                    @Html.DisplayNameFor(model => model.DataEmissao)
+                                </dt>
+                                <dd>
+                                    @Html.DisplayFor(model => model.DataEmissao)
+                                </dd>
+                                <dt>
+                                    @Html.DisplayNameFor(model => model.DataCobranca)
+                                </dt>
+                                <dd>
+                                    @(Model.DataCobranca.HasValue ? Html.DisplayFor(model => model.DataCobranca) : "-")
+                                </dd>
+                                <dt>
+                                    @Html.DisplayNameFor(model => model.DataPagamento)
+                                </dt>
+                                <dd>
+                                    @(Model.DataPagamento.HasValue ? Html.DisplayFor(model => model.DataPagamento) : "-")
+                                </dd>
+                                <dt>
+                                    @Html.DisplayNameFor(model => model.Valor)
+                                </dt>
+                                <dd>
+                                    @Model.Valor.ToString("C")
+                                </dd>
+                            </dl>
+
+                            <div>
+                                <form asp-action="Delete">
+                                    <input type="hidden" asp-for="Id" />
+                                    <input type="submit" value="Excluir" class="btn btn-danger" />
+                                    <a class="btn btn-info" href="javascript:window.history.back();">Voltar</a>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@* <h4 style="padding-top: 50px">@ViewData["Title"] </h4>
+
+<h5>Você tem certeza disso?</h5>
+
+<div class="row">    
+    <div class="col-md-6">
+        <dl>
+            <dt>
+                @Html.DisplayNameFor(model => model.StatusId)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.StatusId)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.NomePagador)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.NomePagador)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.DocumentoNotaFiscal)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.DocumentoNotaFiscal)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.DocumentoBoletoBancario)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.DocumentoBoletoBancario)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.DataEmissao)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.DataEmissao)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.DataCobranca)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.DataCobranca)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.DataPagamento)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.DataPagamento)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Valor)
+            </dt>
+            <dd>
+                @Model.Valor.ToString("C")
+            </dd>            
+        </dl>
+
+        <div>
+            <form asp-action="Delete">
+                <input type="hidden" asp-for="Id" />
+                <input type="submit" value="Excluir" class="btn btn-danger" />
+                <a class="btn btn-info" href="javascript:window.history.back();">Voltar</a>
+            </form>
+        </div>
+    </div>
+</div> *@

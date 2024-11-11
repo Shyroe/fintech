@@ -24,3 +24,6 @@ secrets.json
 
 # Visual Studio Code
 .vscode/
+
+# Bibliotecas de terceiros
+src/FinTech.App/wwwroot/lib/

@@ -1,0 +1,39 @@
+[
+  {
+    "outputFileName": "wwwroot/css/libs.min.css",
+    "inputFiles": [
+      "wwwroot/lib/bootstrap/css/bootstrap.min.css",
+      "wwwroot/lib/select2/css/select2.min.css",
+      "wwwroot/lib/select2-bootstrap-5-theme/select2-bootstrap-5-theme.min.css",
+      "wwwroot/lib/select2-bootstrap-theme/select2-bootstrap.min.css",
+      // DataTables CSS files
+      "wwwroot/lib/datatables/css/jquery.dataTables.min.css",
+      "wwwroot/lib/datatables/css/dataTables.bootstrap4.min.css",
+      "wwwroot/lib/datatables-select/dist/css/select.bootstrap.min.css",
+      //end
+      "wwwroot/lib/flatpickr/dist/flatpickr.min.css",
+      "wwwroot/lib/dropzone/dropzone.min.css"
+    ],
+    "minify": { "enabled": true }
+  },
+  {
+    "outputFileName": "wwwroot/js/libs.min.js",
+    "inputFiles": [
+      "wwwroot/lib/jquery/jquery.min.js",
+      "wwwroot/lib/bootstrap/js/bootstrap.bundle.min.js",
+      "wwwroot/lib/jquery-validation/dist/jquery.validate.min.js",
+      "wwwroot/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js",
+      "wwwroot/lib/chart.js/dist/chart.umd.js",
+      "wwwroot/lib/select2/js/select2.min.js",
+      // DataTables JS files
+      "wwwroot/lib/datatables/js/jquery.dataTables.min.js",
+      "wwwroot/lib/datatables/js/dataTables.bootstrap4.min.js",
+      "wwwroot/lib/datatables-select/dist/js/dataTables.select.min.js",
+      "wwwroot/lib/datatables-buttons/js/dataTables.buttons.min.js",
+      //end
+      "wwwroot/lib/flatpickr/dist/flatpickr.min.js",
+      "wwwroot/lib/dropzone/dropzone.min.js"
+    ],
+    "minify": { "enabled": true }
+  }
+]
