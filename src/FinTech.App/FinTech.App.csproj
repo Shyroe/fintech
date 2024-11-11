@@ -24,4 +24,7 @@
   <ItemGroup>
     <ProjectReference Include="..\FinTech.Data\FinTech.Data.csproj" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="wwwroot\lib\" />
+  </ItemGroup>
 </Project>
