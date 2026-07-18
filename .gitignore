@@ -15,12 +15,15 @@ project.fragment.lock.json
 *.db
 *.db-journal
 
+# Local environment and secrets
+.env
+.env.*
+!.env.example
+secrets.json
+
 # Logs
 logs/
 *.log
-
-# User Secrets
-secrets.json
 
 # Visual Studio Code
 .vscode/
