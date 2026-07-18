@@ -1,129 +1,145 @@
-# FinTech Application
+# Fintech Invoicing Dashboard
 
-### Dashboard Demo
-![Dashboard Indicadores](https://github.com/user-attachments/assets/f9a69da5-1dbf-46c2-9fc1-8e163fa2ede3)
+Aplicação administrativa para cadastro, consulta e acompanhamento de notas fiscais, com filtros, paginação, indicadores financeiros e gráficos de evolução mensal.
 
-![Dashboard Gráficos](https://github.com/user-attachments/assets/96579e85-3208-4ac5-829c-5752860496d1)
+O projeto foi desenvolvido como desafio técnico e case de portfólio. Ele demonstra a organização de uma aplicação ASP.NET Core MVC em camadas, integração com SQL Server e tradução de requisitos de negócio em fluxos administrativos.
 
-### Notas Fiscais Demo
-![Notas Fiscais Filtros](https://github.com/user-attachments/assets/023d68c9-c88f-40c4-9d4e-c93abf82b1ef)
+## Screenshots
 
-![Notas Fiscais Tabela](https://github.com/user-attachments/assets/01eaf10c-5614-4560-a656-3950982fe02a)
+### Dashboard
 
-## Desenvolvedor
-- **Nome**: Leonardo Camargo
-- **Email**: lhc.developerweb@gmail.com
-- **LinkedIn**: [LinkedIn](https://www.linkedin.com/in/leonardo-camargo/)
-- **Github**: [github.com/Shyroe](https://github.com/Shyroe)
+![Dashboard com indicadores](https://github.com/user-attachments/assets/f9a69da5-1dbf-46c2-9fc1-8e163fa2ede3)
 
-## Descrição do Projeto
-Projeto desenvolvido em ASP.NET Core MVC com integração ao SQL Server para realizar gerenciamento das notas fiscais e saber os principais indicadores.
-Por meio de uma plataforma com Listagem paginada das notas fiscais e um dashboard para visualização de indicadores e Gráfico de evolução da inadimplência ou da receita recebida mês a mês.
+![Dashboard com gráficos](https://github.com/user-attachments/assets/96579e85-3208-4ac5-829c-5752860496d1)
 
-## Tecnologias Utilizadas
-- **ASP.NET Core** 8.0
-- **Entity Framework Core** 8.0
-- **Bootstrap** 5.0
-- **ChartJS** 4.4
-- **SQL Server** 2022
-- **Docker**
-- **C#**
+### Gestão de notas fiscais
 
-## Setup do Projeto
+![Filtros de notas fiscais](https://github.com/user-attachments/assets/023d68c9-c88f-40c4-9d4e-c93abf82b1ef)
 
-### Pré-requisitos
-- [.NET SDK](https://dotnet.microsoft.com/download/dotnet) 8.0
-- [Docker](https://www.docker.com/)
-- SQL Server ou Docker com SQL Server
+![Tabela de notas fiscais](https://github.com/user-attachments/assets/01eaf10c-5614-4560-a656-3950982fe02a)
 
-### Passos de Instalação
+## Principais funcionalidades
 
-1. **Clonar o Repositório**
-   ```bash
-   git clone https://github.com/Shyroe/fintech.git
+- dashboard com indicadores financeiros;
+- gráficos de receita recebida e inadimplência por período;
+- cadastro e consulta de notas fiscais;
+- listagem paginada;
+- filtros para localizar e acompanhar registros;
+- persistência em SQL Server com Entity Framework Core;
+- carga de dados fictícios para demonstração local;
+- execução local com Docker Compose.
 
-2. **Configurar o Banco de Dados**
-	
- 	Edite o arquivo **appsettings.json** com a string de conexão correta:
-	
- 	**Docker**: Veja informações no arquivo **docker-compose.yml**
-	
- 	Exemplo de string de conexão:
+## Arquitetura
 
-	```bash
-	"ConnectionStrings": {
-   	   "DefaultConnection": "Server=db;Database=FintechDocker;User=sa;Password=#Docker12300#;TrustServerCertificate=True"
-    	}
-   	```
-			
-	**Sql Server Local**:
-   
-    Exemplo de string de conexão:
-   
-   	```bash
-	"ConnectionStrings": {
-		   "DefaultConnection": "Server=localhost;Database=FinTech;Trusted_Connection=True;MultipleActiveResultSets=true;TrustServerCertificate=True"
-   	}
- 	```
+A solução está dividida em três projetos:
 
-4. **Aplicar Migrations**
-	
-   	Instalar ferramenta:
-   
-	_dotnet tool install --global dotnet-ef_
-	
+```text
+src/
+├── FinTech.App/       # Aplicação ASP.NET Core MVC, Razor Views e composição
+├── FinTech.Business/  # Regras de negócio e validações
+└── FinTech.Data/      # Persistência, EF Core, contexto e migrations
+```
 
-	Selecione o projeto: **FinTech.Data**
-	
-	_Rode os seguintes comandos:_
+Essa separação mantém apresentação, regras e acesso a dados em responsabilidades distintas, sem atribuir ao projeto padrões arquiteturais que ele não implementa formalmente.
 
-	```bash
-	dotnet ef migrations add InitialCreate -Context MeuDbContext
-	dotnet ef database update -Context MeuDbContext
- 	```
+## Stack
 
-6. **Restaurar bibliotecas Javascript**
+- .NET 8 e ASP.NET Core MVC;
+- C#;
+- Entity Framework Core 8;
+- SQL Server 2022;
+- FluentValidation;
+- AutoMapper;
+- Razor Views;
+- Bootstrap 5;
+- Chart.js;
+- DataTables, Select2 e Flatpickr;
+- Docker e Docker Compose;
+- LibMan para dependências frontend.
 
-	Rode o seguinte comando:
+## Executar com Docker
 
-	 ```bash
-	 dotnet libman restore
-	 ```
-		
-	Esse comando baixa todas as bibliotecas especificadas no libman.json e adiciona na pasta: wwwroot/lib    
+### Requisitos
 
-7. **Executar a Aplicação**
-	
-	
-	
- 	**Projeto Local:**
-   
-	Adicione como projeto de Inicialização: **FinTech.App**
+- Docker Desktop ou Docker Engine com Docker Compose.
 
-   	Rode o comando:
-	
-	```bash
-   	dotnet run
-	```		
-	
- 	**Docker Compose:**
-    	 
-	Instale o **Docker Desktop** se ainda não tiver
- 	
-    Adicione como projeto de Inicialização: **Docker-Compose**
-	
-	Se tiver Visual Studio IDE e Docker Desktop instalado é só apertar **F5** que já abre o projeto com os dados falsos de exemplo para testar.
-	
-		
-    Ou Rode os seguintes comandos:
-   
- 	```bash
-	docker-compose up --build (cria os containers)
-	docker-compose up -d (roda os containers)
-  	```
+### Configuração
 
-8. **Observações**
+Crie um arquivo `.env` na raiz do repositório e defina uma senha local forte para o SQL Server:
 
-   Os códigos sql das tabelas do sistema (Migrations) estão dentro da pasta **sql**
+```dotenv
+MSSQL_SA_PASSWORD=<defina-uma-senha-local-forte>
+```
 
-   No Arquivo: **Seeds/DataSeeder.cs**, tem uma lógica para adicionar dados falsos no banco de dados para testar os filtros
+O arquivo `.env` é ignorado pelo Git e não deve ser enviado ao repositório.
+
+### Inicialização
+
+```bash
+git clone https://github.com/Shyroe/fintech.git
+cd fintech
+docker compose up --build
+```
+
+A aplicação será exposta em:
+
+```text
+http://localhost:5000
+```
+
+Para encerrar os containers:
+
+```bash
+docker compose down
+```
+
+Use `docker compose down -v` somente quando também quiser remover o volume local do SQL Server.
+
+## Executar sem Docker
+
+### Requisitos
+
+- .NET SDK 8;
+- SQL Server local;
+- ferramenta `dotnet-ef`;
+- LibMan CLI.
+
+Configure `ConnectionStrings:DefaultConnection` por variável de ambiente ou ASP.NET Core User Secrets. O repositório não mantém senha ou connection string privada em arquivos versionados.
+
+Depois, restaure e execute:
+
+```bash
+dotnet restore FinTech.sln
+cd src/FinTech.App
+libman restore
+cd ../..
+dotnet ef database update --project src/FinTech.Data --startup-project src/FinTech.App --context MeuDbContext
+dotnet run --project src/FinTech.App
+```
+
+## Dados de demonstração
+
+A aplicação possui uma rotina de seed em `Seeds/DataSeeder.cs` para popular o banco local com dados fictícios e permitir a avaliação dos filtros, tabelas, indicadores e gráficos.
+
+## Estado do projeto
+
+- case de portfólio e desafio técnico;
+- código público para estudo e avaliação técnica;
+- sem demonstração hospedada confirmada;
+- não apresentado como sistema em produção;
+- a solução atual não inclui um projeto de testes automatizados no arquivo `FinTech.sln`.
+
+## Próximas evoluções
+
+- adicionar testes de regras de negócio e integração;
+- automatizar build e validações em CI;
+- documentar decisões técnicas com maior profundidade;
+- revisar acessibilidade e responsividade das telas administrativas;
+- disponibilizar uma demonstração pública quando houver infraestrutura adequada.
+
+## Autor
+
+**Leonardo Camargo** — Software Developer | Frontend Engineering
+
+- [GitHub](https://github.com/Shyroe)
+- [LinkedIn](https://www.linkedin.com/in/leonardo-camargo/)
