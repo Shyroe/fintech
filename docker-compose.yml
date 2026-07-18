@@ -1,5 +1,3 @@
-version: '3.4'
-
 services:
   fintech.app:
     image: ${DOCKER_REGISTRY-}fintechapp
@@ -7,29 +5,29 @@ services:
     build:
       context: .
       dockerfile: src/FinTech.App/Dockerfile
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_HTTP_PORTS: 8080
+      ConnectionStrings__DefaultConnection: "Server=db;Database=FintechDocker;User Id=sa;Password=${MSSQL_SA_PASSWORD:?MSSQL_SA_PASSWORD is required};TrustServerCertificate=True"
     ports:
       - "5000:8080"
-      - "5001:8081"
     depends_on:
       - db
-    
+
   db:
     image: mcr.microsoft.com/mssql/server:2022-latest
     container_name: mssql-db
     hostname: mssql-db
-    user: "0:0"
     environment:
-      ACCEPT_EULA: 'Y'
-      MSSQL_SA_PASSWORD: '#Docker12300#'
-      MSSQL_PID: 'Developer'
+      ACCEPT_EULA: "Y"
+      MSSQL_SA_PASSWORD: ${MSSQL_SA_PASSWORD:?MSSQL_SA_PASSWORD is required}
+      MSSQL_PID: Developer
       MSSQL_TCP_PORT: 1433
-       
     ports:
       - "1433:1433"
     volumes:
       - mssql-data:/var/opt/mssql/data
       - ./sql-scripts:/docker-entrypoint-initdb.d
-      
+
 volumes:
   mssql-data:
-
